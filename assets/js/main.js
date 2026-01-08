@@ -1,7 +1,7 @@
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 
-const limit = 10
+const limit = 4
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
@@ -17,17 +17,18 @@ function convertPokemonToLi(pokemon) {
             </div>
            
             <div class="info">
-                <div class="sobre">
-                    <strong>Sobre</strong><br>
-                    Altura: ${pokemon.height} <br>
-                    Peso: ${pokemon.weight} <br>
-                    Experiência Base: ${pokemon.base_experience}
-                </div>
+                <ol class="about">
+                    <strong>Sobre:</strong>
+                    <p>Altura: <span>${pokemon.height / 10}</span>M</p>
+                    <p>Peso:<span>${pokemon.weight / 10}</span>KG</p>
+                    <p>Experiência Base: ${pokemon.base_experience}</p>
+                </ol>
             
-                <div class="habilidades">
+                <ol class="abilities">
                     <strong>Habilidades</strong><br>
-                    ${pokemon.abilities.map((ability) => `<span class="ability">${ability}</span>`).join(', ')}
-                </div>
+                    <p>${pokemon.abilities.map((ability) => `<span class="ability">${ability}</span>`).join(', ')}</p>
+                    ${pokemon.moves.length ? `<p>Movimentos: ${pokemon.moves.slice(0, 3).join(', ')}</p>` : ''}
+                </ol>
             </div>
         </li>
     `

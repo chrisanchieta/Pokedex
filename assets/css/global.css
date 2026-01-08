@@ -4,15 +4,20 @@
 }
 
 body {
-    background-color: #f6f8fc;
+    background-color: #fceaea;
 }
 
-.content {
-    width: 100vw;
-    height: 100vh;
-    padding: 1rem;
-    background-color: #fff;
+
+
+.titulo img {
+    width: 50px;
+    vertical-align: middle;
 }
+
+.titulo{
+    text-align: center;
+}
+
 
 @media screen and (min-width: 992px) {
     .content {

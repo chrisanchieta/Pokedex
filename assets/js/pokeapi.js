@@ -18,6 +18,8 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     const abilities = pokeDetail.abilities.map((abilitySlot) => abilitySlot.ability.name)
     pokemon.abilities = abilities
 
+    const move = pokeDetail.moves.map((moveSlot) => moveSlot.move.name)
+    pokemon.moves = move
 
     pokemon.photo = pokeDetail.sprites.other['official-artwork'].front_default
 
